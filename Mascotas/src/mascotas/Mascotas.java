@@ -10,6 +10,10 @@ public class Mascotas {
         Jose.Datos();
         Jose.Ficha();
         Jose.Ladridos();
+        
+        //Constructor
+        Perros Luis = new Perros();
+        
     }
     
 }

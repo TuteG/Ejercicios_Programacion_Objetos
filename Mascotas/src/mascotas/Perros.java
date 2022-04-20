@@ -39,10 +39,18 @@ public class Perros {
     
     public void Ladridos(){
     
-        System.out.print("GUAU GUAU GUAU");
+        System.out.println("GUAU GUAU GUAU");
 }
             
-    
+    public Perros() {
+
+        Scanner entrada = new Scanner(System.in);
+        String nombre = ""; 
+        
+        System.out.println("¿Cual es el nombre del perro?");
+        nombre = entrada.nextLine();
+        System.out.println("Su nombre es: " + nombre);
+    }
     
     
 
