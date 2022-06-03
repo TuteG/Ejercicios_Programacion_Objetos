@@ -74,7 +74,7 @@ public class Inicio extends javax.swing.JFrame {
         this.setVisible(false);
         Escritorio G = new Escritorio();
         G.setLocationRelativeTo(null);
-        G.setSize(1000, 1024);
+        G.setSize(650, 650);
         G.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -68,6 +68,15 @@ public class Escritorio extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Salir");
+        jMenu3.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+                jMenu3MenuDeselected(evt);
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+            }
+        });
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
@@ -91,6 +100,10 @@ public class Escritorio extends javax.swing.JFrame {
         fondo.add(V2);
         V2.show();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenu3MenuDeselected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu3MenuDeselected
+        System.exit(0);
+    }//GEN-LAST:event_jMenu3MenuDeselected
 
     /**
      * @param args the command line arguments
