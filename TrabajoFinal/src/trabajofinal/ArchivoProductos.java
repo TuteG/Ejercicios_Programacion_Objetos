@@ -1,19 +1,19 @@
 package trabajofinal;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
-public class archivo {
+public class ArchivoProductos {
 
     File archivo;
-
     Seguros s = new Seguros();
-    String tseguros;
 
     public void crearArchivo() {
         try {
-            //crear el archivo
-            archivo = new File("SegurosCFP.txt");
+            
+            archivo = new File("Producto.txt");
             if (archivo.createNewFile()) {
                 JOptionPane.showMessageDialog(null, "El archivo fue creado con exito");
             }
@@ -24,6 +24,7 @@ public class archivo {
 
     public void escribirEnarchivo(Persona persona) {
         Seguros s = new Seguros();
+
         try {
             FileWriter escribir = new FileWriter(archivo, true);
 
@@ -32,7 +33,7 @@ public class archivo {
                     escribir.write(persona.getTseg() + ";" + persona.getCuilcli() + ";" + persona.getNombrecli() + ";" + persona.getTelcli() + ";" + persona.getMailcli() + ";" + persona.getDominio() + ";" + persona.getMarca() + ";" + persona.getModelo() + ";" + persona.getConfra() + ";" + persona.getAna() + ";" + persona.getBox1() + ";" + persona.getBox2() + ";" + persona.getBox3() + ";" + persona.getBox4() + ";" + persona.getBox5() + "\r\n");
                     break;
                 case "Seguros Hogar":
-                    escribir.write(persona.getTseg() + ";" + persona.getCuilcli() + ";" + persona.getNombrecli() + ";" + persona.getTelcli() + ";" + persona.getMailcli() + "\r\n");
+                    escribir.write(persona.getTseg() + ";" + persona.getCuilcli() + ";" + persona.getNombrecli() + ";" + persona.getTelcli() + ";" + persona.getMailcli() + ";" + persona.getIncendio() + ";" + persona.getInundacion() + ";" + persona.getRobo() + ";" + persona.getCobertura1() + ";" + persona.getCobertura2() + ";" + persona.getCobertura3() + "\r\n");
                     break;
                 case "Seguros Vida":
                     escribir.write(persona.getTseg() + ";" + persona.getCuilcli() + ";" + persona.getNombrecli() + ";" + persona.getTelcli() + ";" + persona.getMailcli() + "\r\n");
@@ -44,5 +45,6 @@ public class archivo {
         } catch (IOException e) {
             System.out.println(e);
         }
+
     }
 }

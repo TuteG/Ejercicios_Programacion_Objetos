@@ -1,19 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package trabajofinal;
 
-/**
- *
- * @author User
- */
+
 public class Alta extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Alta
-     */
     public Alta() {
         initComponents();
     }
@@ -42,19 +31,16 @@ public class Alta extends javax.swing.JInternalFrame {
         nombrecli = new javax.swing.JTextField();
         apellidocli = new javax.swing.JTextField();
         fdenaccli = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
         domiciliocli = new javax.swing.JTextField();
         localidadcli = new javax.swing.JTextField();
         Prov = new javax.swing.JComboBox<>();
         emailcli = new javax.swing.JTextField();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
         hijoscli = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        Genero = new javax.swing.JComboBox<>();
+        Ecivil = new javax.swing.JComboBox<>();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALTA", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
         setClosable(true);
@@ -102,15 +88,6 @@ public class Alta extends javax.swing.JInternalFrame {
             }
         });
 
-        jCheckBox1.setText("Masculino");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox2.setText("Femenino");
-
         domiciliocli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 domiciliocliActionPerformed(evt);
@@ -123,22 +100,6 @@ public class Alta extends javax.swing.JInternalFrame {
         Prov.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProvActionPerformed(evt);
-            }
-        });
-
-        jCheckBox3.setText("Soltero/a");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox4.setText("Casado/a");
-
-        jCheckBox5.setText("Viudo/a");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
             }
         });
 
@@ -162,6 +123,10 @@ public class Alta extends javax.swing.JInternalFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+
+        Genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Masculino", "Femenino" }));
+
+        Ecivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Soltero/a", "Casado/a", "Vuido/a" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -188,14 +153,6 @@ public class Alta extends javax.swing.JInternalFrame {
                                     .addComponent(nombrecli)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(localidadcli)
-                                    .addComponent(domiciliocli)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel9))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,27 +169,28 @@ public class Alta extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel11))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(hijoscli)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jCheckBox4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox5)
-                                        .addGap(0, 72, Short.MAX_VALUE))
-                                    .addComponent(hijoscli)))
+                                        .addComponent(Ecivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel5))
                                 .addGap(18, 18, 18)
-                                .addComponent(jCheckBox1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox2)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(localidadcli)
+                                    .addComponent(domiciliocli)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jButton1)
                         .addGap(90, 90, 90)
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addComponent(jButton3)))
                 .addContainerGap())
         );
@@ -258,8 +216,7 @@ public class Alta extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2))
+                    .addComponent(Genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -279,9 +236,7 @@ public class Alta extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5))
+                    .addComponent(Ecivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hijoscli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,27 +246,15 @@ public class Alta extends javax.swing.JInternalFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
     private void fdenaccliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fdenaccliActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fdenaccliActionPerformed
-
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
-
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void CuilcliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuilcliActionPerformed
         // TODO add your handling code here:
@@ -326,7 +269,15 @@ public class Alta extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_domiciliocliActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Cuilcli.setText("");
+        nombrecli.setText("");
+        apellidocli.setText("");
+        fdenaccli.setText("");
+        domiciliocli.setText("");
+        localidadcli.setText("");
+        emailcli.setText("");
+        hijoscli.setText("");
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProvActionPerformed
@@ -347,24 +298,23 @@ public class Alta extends javax.swing.JInternalFrame {
         String localidad = localidadcli.getText();
         String email = emailcli.getText();
         String hijos = hijoscli.getText();
-        String box1 = jCheckBox1.getText();
-        String box2 = jCheckBox2.getText();
-        String box3 = jCheckBox3.getText();
-        String box4 = jCheckBox4.getText();
-        String box5 = jCheckBox5.getText();
+        String genero = (String) Genero.getSelectedItem();
+        String ecivil = (String) Ecivil.getSelectedItem();
         String provincia = (String) Prov.getSelectedItem();
         
-        Clientes clientes = new Clientes(Cuil, nombre, apellido, fdnac, domicilio, localidad, box1, box2, box3, box4, box5, provincia, email, hijos);
+        Clientes clientes = new Clientes(Cuil, nombre, apellido, fdnac, domicilio, localidad, genero, provincia, email, ecivil, hijos);
         archiA.Escribir(clientes);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      
+        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cuilcli;
+    private javax.swing.JComboBox<String> Ecivil;
+    private javax.swing.JComboBox<String> Genero;
     private javax.swing.JComboBox<String> Prov;
     private javax.swing.JTextField apellidocli;
     private javax.swing.JTextField domiciliocli;
@@ -374,11 +324,6 @@ public class Alta extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
